@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    text-align: center;
+    background-image: url("images/greenfield.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 800px;
+    background-position: center;
+    /* background-color: #45b08c; */
+    font-family: 'VT323', monospace;
+  }
+
+  h1 {
+    color: purple;
+    font-size: 50px;
+  }
