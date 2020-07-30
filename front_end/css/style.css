@@ -18,12 +18,13 @@
     color: purple;
     font-size: 50px;
   }
+  
+  .create-pet{
+    padding-top: 300px;
+  }
 
   .pet-image{
     /* position: relative; */
     padding-top: 300px;
   }
 
-  .create-pet{
-    padding-top: 300px;
-  }
