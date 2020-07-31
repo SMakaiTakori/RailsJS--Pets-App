@@ -10,8 +10,21 @@ class Pet {
     }
 
     
+    renderPet(){
+        let petInfo = document.getElementById('pet-info')
+
+        petInfo.innerHTML +=
+
+        `
+        <ul>
+        <label>Pet Name: </label> <li> ${this.name} </li>
+        <label>Pet Owner: </label><li> ${this.owner}</li> 
+        <label>Pet Type: </label><li> ${this.animal_type}</li> 
+        <label>Mood: </label> <li>${this.mood}</li> 
+        </ul>     
+         `
+    }
 
 
-
-
+    
 }

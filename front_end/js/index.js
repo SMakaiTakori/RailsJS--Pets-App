@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // fetchPets()
+    fetchPets()
     
 })
 
@@ -10,12 +10,15 @@ document.addEventListener("DOMContentLoaded", () => {
 function fetchPets(){
     fetch(`${BASE_URL}/pets`)
     .then(resp => resp.json())
-    .then(pets => {
-        console.log(pets)
+    .then(pets => {        
+        for (const pet of pets){
+            let p = new Pet(pet.id, pet.name, pet.owner, pet.animal_type, pet.mood, pet.phrase)    
+            p.renderPet().last;
+        }   
     })
 }
 
-fetchPets()
+
 
 // create - create a new pet
 
