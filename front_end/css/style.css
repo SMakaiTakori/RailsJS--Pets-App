@@ -22,13 +22,13 @@
   h2 { 
     color: hotpink;
     padding-top: 20px;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
   }
 
   form {
     padding-bottom: 50px;
     margin: 0 auto; 
-    width:600px; 
+    width: 600px; 
   }
   
   .form-group, select{

@@ -46,6 +46,19 @@ function createForm(){
             <button type="submit" class="btn btn-primary ">Create Pet!</button>
         </form>
     `
+    submitValues()
+}
+
+
+function submitValues(){
+    let petForm = document.getElementById('create-pet')
+
+    //add event listener to form
+    petForm.addEventListener('submit', () => {
+        // debugger;
+    })
+
+
 }
 
 
