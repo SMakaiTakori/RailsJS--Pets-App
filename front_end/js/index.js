@@ -37,7 +37,7 @@ function createForm(){
             <label for="owner" class="sr-only">Owner Name</label>
             <input type="owner" class="form-control" id="owner" placeholder="Enter Owner's Name">
             </div>
-            <select style='width:150px;' class="custom-select  ">
+            <select id= 'pet-options' style='width:150px;' class="custom-select  ">
                 <option selected>Select Pet Type</option>
                 <option value="1">Dog</option>
                 <option value="2">Lizard</option>
@@ -46,20 +46,22 @@ function createForm(){
             <button type="submit" class="btn btn-primary ">Create Pet!</button>
         </form>
     `
-    submitValues()
-}
-
-
-function submitValues(){
-    let petForm = document.getElementById('create-pet')
-
     //add event listener to form
-    petForm.addEventListener('submit', () => {
-        // debugger;
-    })
-
-
+    petForm.addEventListener('submit', petFormSubmission)
 }
+
+function petFormSubmission() {
+    // debugger;
+    event.preventDefault();
+    //Grab values submitted by user
+    let petName = document.getElementById('name').value;
+    let owner = document.getElementById('owner').value;
+    let pet_type = document.getElementById('pet-options').value;
+  
+
+    console.log(petName, owner, pet_type)
+}
+
 
 
 //edit  - edit pet info
