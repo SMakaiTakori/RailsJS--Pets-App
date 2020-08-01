@@ -18,6 +18,11 @@
     color: purple;
     font-size: 50px;
   }
+
+  form {
+    margin: 0 auto; 
+    width:800px; 
+  }
   
   #pet-info li{
     display: inline;
