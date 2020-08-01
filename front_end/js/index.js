@@ -40,8 +40,9 @@ function createForm(){
             <select id= 'pet-options' style='width:150px;' class="custom-select  ">
                 <option selected>Select Pet Type</option>
                 <option value="1">Dog</option>
-                <option value="2">Lizard</option>
+                <option value="2">Cat</option>
                 <option value="3">Dragon</option>
+                <option value="4">Lizard</option>
             </select>
             <button type="submit" class="btn btn-primary ">Create Pet!</button>
         </form>
@@ -54,10 +55,17 @@ function petFormSubmission() {
     // debugger;
     event.preventDefault();
     //Grab values submitted by user
-    let petName = document.getElementById('name').value;
+    let name = document.getElementById('name').value;
     let owner = document.getElementById('owner').value;
     let pet_type = document.getElementById('pet-options').value;
-  
+    
+    //bundle these values so I can make a fetch POST request
+    
+    let pet = {
+        name: name,
+        owner: owner,
+        pet_type: pet_type
+    }
 
     console.log(petName, owner, pet_type)
 }
