@@ -19,16 +19,27 @@
     font-size: 50px;
   }
 
+  h2 { 
+    color: hotpink;
+    padding-top: 20px;
+    padding-bottom: 10px;
+  }
+
   form {
+    padding-bottom: 50px;
     margin: 0 auto; 
-    width:800px; 
+    width:600px; 
   }
   
+  .form-group, select{
+    margin-right: 10px;
+  }
+
   #pet-info li{
     display: inline;
     font-size:30px;
     color: purple;
-    padding-right: 30px;
+    padding-right: 20px;
   }
 
   .create-pet{

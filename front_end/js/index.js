@@ -27,23 +27,24 @@ function createForm(){
     // console.log(petForm)
     petForm.innerHTML += 
     `
-    <form class="form-inline">
-    <div class="form-group mx-sm-3 mb-2">
-      <label for="name" class="sr-only">Pet Name</label>
-      <input type="name" class="form-control" id="name" placeholder="Enter Pet Name">
-    </div>
-    <div class="form-group mx-sm-3 mb-2">
-      <label for="owner" class="sr-only">Owner Name</label>
-      <input type="owner" class="form-control" id="owner" placeholder="Enter Owner's Name">
-    </div>
-    <select style='width:150px;' class="custom-select custom-select-sm mx-sm-3 mb-2">
-        <option selected>Select Pet Type</option>
-        <option value="1">Dog</option>
-        <option value="2">Lizard</option>
-        <option value="3">Dragon</option>
-    </select>
-    <button type="submit" class="btn btn-primary mb-2 mb-3">Create Pet!</button>
-  </form>
+    <h2>Get Started by creating your pet below!</h2>
+        <form class="form-inline">
+            <div class="form-group">
+            <label for="name" class="sr-only">Pet Name</label>
+            <input type="name" class="form-control" id="name" placeholder="Enter Pet Name">
+            </div>
+            <div class="form-group">
+            <label for="owner" class="sr-only">Owner Name</label>
+            <input type="owner" class="form-control" id="owner" placeholder="Enter Owner's Name">
+            </div>
+            <select style='width:150px;' class="custom-select  ">
+                <option selected>Select Pet Type</option>
+                <option value="1">Dog</option>
+                <option value="2">Lizard</option>
+                <option value="3">Dragon</option>
+            </select>
+            <button type="submit" class="btn btn-primary ">Create Pet!</button>
+        </form>
     `
 }
 
