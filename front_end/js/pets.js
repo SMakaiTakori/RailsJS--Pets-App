@@ -17,10 +17,10 @@ class Pet {
 
         `
         <ul>
-        <label>Pet Name: </label> <li> ${this.name} </li>
-        <label>Pet Owner: </label><li> ${this.owner}</li> 
-        <label>Pet Type: </label><li> ${this.animal_type}</li> 
-        <label>Mood: </label> <li>${this.mood}</li> 
+        <li><label>Pet Name: </label>  ${this.name} </li>
+        <li><label>Pet Owner: </label> ${this.owner}</li> 
+        <li><label>Pet Type: </label> ${this.animal_type}</li> 
+        <li><label>Mood: </label> ${this.mood}</li> 
         </ul>     
          `
     }

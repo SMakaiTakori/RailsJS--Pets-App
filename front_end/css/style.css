@@ -9,9 +9,9 @@
     background-image: url("images/greenfield.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    height: 800px;
+    height: 950px;
     background-position: center;
-    font-family: 'VT323', monospace;
+    font-family: 'VT323', monospace !important;
   }
 
   h1 {
@@ -19,8 +19,16 @@
     font-size: 50px;
   }
   
+  #pet-info li{
+    display: inline;
+    font-size:30px;
+    color: purple;
+    padding-right: 30px;
+  }
+
   .create-pet{
-    padding-top: 300px;
+    padding-top: 100px;
+    padding-bottom: 50px;
   }
 
   .pet-image{
