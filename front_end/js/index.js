@@ -82,7 +82,6 @@ function petFormSubmission() {
     .then(pet => {
         let p = new Pet(pet.id, pet.name, pet.owner, pet.animal_type, pet.mood, pet.phrase)   
         p.renderPet();
-        console.log(pet.animal_type)
     })
    
 }
