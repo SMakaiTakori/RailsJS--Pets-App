@@ -13,7 +13,6 @@ class Pet {
     renderPet(){
         let petInfo = document.getElementById('pet-info')
         // petInfo.empty();
-
         petInfo.innerHTML +=
         `
         <ul>
@@ -26,28 +25,19 @@ class Pet {
     }
 
     displayPet(){
-        let pet = document.getElementById('pet-image')
+        let petImage = document.getElementById('pet-image')
         let petData = document.getElementById('pet-info')
+        let animal_type = document.getElementById('options').value; 
+        let dragon = "../front_end/css/images/cutestDragon.png"; 
+        let wolf = "../front_end/css/images/wolf.jpg"
 
+        petImage.src = dragon;
 
-        pet.innerHTML += 
+            // if (animal_type === 'Dragon'){     
 
-        ` <img src= "../css/images/dragon.jpg"> </img>   `
-
-        // petData.innerHTML +=
-
-        // `
-        // <ul>
-        // <li><label>Pet Name: </label>  ${this.name} </li>
-        // <li><label>Pet Owner: </label> ${this.owner}</li> 
-        // <li><label>Pet Type: </label> ${this.animal_type}</li> 
-        // <li><label>Mood: </label> ${this.mood}</li> 
-        // </ul> 
-
-        // `
-        // console.log(pet)
-
-    }
-   
+            //     src.appendChild(div);  
+            //     // console.log(src)
+            // }
+    }  
    
 }

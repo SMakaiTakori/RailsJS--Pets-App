@@ -29,19 +29,17 @@ function createForm(){
     petForm.innerHTML += 
     `
     <h2>Get Started by creating your pet below!</h2>
-        <form class="form-inline">
+        <form name= "create-pet" class="form-inline">
             <div class="form-group">
-            <label for="name" class="sr-only">Pet Name</label>
             <input type="name" class="form-control" id="name" placeholder="Enter Pet Name">
             </div>
             <div class="form-group">
-            <label for="owner" class="sr-only">Owner Name</label>
             <input type="owner" class="form-control" id="owner" placeholder="Enter Owner's Name">
             </div>
-            <select id="options" class="custom-select" style='width:150px;'>
+            <select id="options" class="custom-select" style='width:155px;'>
                 <option selected>Select Pet Type</option>
-                <option value="Dog">Dog</option>
-                <option value="Cat">Cat</option>
+                <option value="Wolf">Wolf</option>
+                <option value="Panther">Panther</option>
                 <option value="Dragon">Dragon</option>
                 <option value="Lizard">Lizard</option>
             </select>          
@@ -49,7 +47,9 @@ function createForm(){
         </form>
     `
     //add event listener to form
-    petForm.addEventListener('submit', petFormSubmission)
+    petForm.addEventListener('submit', petFormSubmission) 
+   
+   
 }
 
 function petFormSubmission() {
@@ -80,11 +80,11 @@ function petFormSubmission() {
     })
     .then(resp => resp.json())
     .then(pet => {
-        let p = new Pet(pet.id, pet.name, pet.owner, pet.animal_type, pet.mood, pet.phrase) 
+        //don't persist to database if empty string
+        let p = new Pet(pet.id, pet.name, pet.owner, pet.animal_type, pet.mood, pet.phrase)    
         p.renderPet();
-        // p.displayPet();
+        p.displayPet();
     })
-   
 }
 
 

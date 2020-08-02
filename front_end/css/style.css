@@ -21,14 +21,14 @@
   }
 
   h2 { 
-    color: hotpink;
+    color: yellow;
     padding-top: 20px;
     padding-bottom: 20px;
   }
 
   form {
     padding-left: 50px;
-    padding-bottom: 50px;
+    padding-bottom: 100px;
     margin: 0 auto; 
     width: 750px; 
   }
@@ -38,6 +38,7 @@
   }
 
   button {
+    color:yellow !important;
     background-color:purple !important; 
   }
 
@@ -53,8 +54,22 @@
     padding-bottom: 50px;
   }
 
-  .pet-image{
+  img {
     /* position: relative; */
-    padding-top: 300px;
+    /* padding-top: 100px; */
+    width: 300px !important;
+    height: 400px !important;
+    /* background: transparent; */
   }
 
+  .transparent {
+    zoom: 1;
+    filter: alpha(opacity=50);
+    opacity: 0.8;
+  }
+
+  /* #pet-image{
+    width: 300px !important;
+    height: 400px !important;
+
+  } */
