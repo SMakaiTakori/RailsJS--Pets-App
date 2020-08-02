@@ -57,15 +57,9 @@
   img {
     /* position: relative; */
     /* padding-top: 100px; */
-    width: 300px !important;
+    width: 400px !important;
     height: 400px !important;
     /* background: transparent; */
-  }
-
-  .transparent {
-    zoom: 1;
-    filter: alpha(opacity=50);
-    opacity: 0.8;
   }
 
   /* #pet-image{
