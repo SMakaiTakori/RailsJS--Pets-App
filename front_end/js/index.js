@@ -37,7 +37,7 @@ function createForm(){
             <label for="owner" class="sr-only">Owner Name</label>
             <input type="owner" class="form-control" id="owner" placeholder="Enter Owner's Name">
             </div>
-            <select id= 'pet-options' style='width:150px;' class="custom-select  ">
+            <select id= 'animal-type' style='width:150px;' class="custom-select  ">
                 <option selected>Select Pet Type</option>
                 <option value="1">Dog</option>
                 <option value="2">Cat</option>
@@ -57,17 +57,31 @@ function petFormSubmission() {
     //Grab values submitted by user
     let name = document.getElementById('name').value;
     let owner = document.getElementById('owner').value;
-    let pet_type = document.getElementById('pet-options').value;
+    let animal_type = document.getElementById('animal-type').value;
     
     //bundle these values so I can make a fetch POST request
     
     let pet = {
         name: name,
         owner: owner,
-        pet_type: pet_type
+        animal_type: animal_type
     }
 
-    console.log(petName, owner, pet_type)
+    //fetch Post request to subsist the input data to db
+
+    fetch(`${BASE_URL}/pets`, {
+        method: "POST",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+        body: JSON.stringify(pet)
+    })
+    .then(resp => resp.json())
+    .then(pet => {
+        let p = new Pet(pet.id, pet.name, pet.owner, pet.animal_type, pet.mood, pet.phrase)   
+    })
+   
 }
 
 

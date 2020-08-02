@@ -1,6 +1,6 @@
 class Pet {
 
-    constructor(id, name, owner, animal_type, mood, phrase){
+    constructor(id, name, owner, animal_type, mood = "neutral", phrase){
         this.id = id;
         this.name = name;
         this.owner = owner;
