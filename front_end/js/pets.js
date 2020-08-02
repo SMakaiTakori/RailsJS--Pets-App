@@ -12,6 +12,7 @@ class Pet {
     
     renderPet(){
         let petInfo = document.getElementById('pet-info')
+        // petInfo.empty();
 
         petInfo.innerHTML +=
         `

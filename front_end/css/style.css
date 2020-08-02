@@ -16,7 +16,8 @@
 
   h1 {
     color: purple;
-    font-size: 50px;
+    font-size: 60px;
+    padding-top: 100px;
   }
 
   h2 { 
@@ -26,13 +27,18 @@
   }
 
   form {
+    padding-left: 50px;
     padding-bottom: 50px;
     margin: 0 auto; 
-    width: 600px; 
+    width: 750px; 
   }
   
   .form-group, select{
     margin-right: 10px;
+  }
+
+  button {
+    background-color:purple !important; 
   }
 
   #pet-info li{

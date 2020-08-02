@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    fetchPets()
+    // fetchPets()
     createForm()
 
     
@@ -8,17 +8,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const BASE_URL = "http://localhost:3000"
 
 // read - fetch pets index
+//include some preloaded pets?
 
-function fetchPets(){
-    fetch(`${BASE_URL}/pets`)
-    .then(resp => resp.json())
-    .then(pets => {        
-        for (const pet of pets){
-            let p = new Pet(pet.id, pet.name, pet.owner, pet.animal_type, pet.mood, pet.phrase)    
-            p.renderPet().last;
-        }   
-    })
-}
+// function fetchPets(){
+//     fetch(`${BASE_URL}/pets`)
+//     .then(resp => resp.json())
+//     .then(pets => {        
+//         for (const pet of pets){
+//             let p = new Pet(pet.id, pet.name, pet.owner, pet.animal_type, pet.mood, pet.phrase)    
+//             p.renderPet().last;
+//         }   
+//     })
+// }
 
 // create a form for user to input pet info for new pet
 
@@ -43,8 +44,7 @@ function createForm(){
                 <option value="Cat">Cat</option>
                 <option value="Dragon">Dragon</option>
                 <option value="Lizard">Lizard</option>
-            </select>
-            <input type="hidden" id= "${this.mood}" class="form-control"></input>
+            </select>          
             <button type="submit" class="btn btn-primary ">Create Pet!</button>
         </form>
     `
@@ -59,9 +59,6 @@ function petFormSubmission() {
     let name = document.getElementById('name').value;
     let owner = document.getElementById('owner').value;
     let animal_type = document.getElementById('options').value;
-    let mood = document.getElementById('mood');
-
-    console.log(name, owner, animal_type,mood)
     
     //bundle these values so I can make a fetch POST request
     
@@ -69,9 +66,8 @@ function petFormSubmission() {
         name: name,
         owner: owner,
         animal_type: animal_type,
-        mood: mood
     }
-    console.log(pet)
+    
     //fetch Post request to subsist the input data to db
 
     fetch(`${BASE_URL}/pets`, {
@@ -84,9 +80,9 @@ function petFormSubmission() {
     })
     .then(resp => resp.json())
     .then(pet => {
-        let p = new Pet(pet.id, pet.name, pet.owner, pet.animal_type, pet.mood, pet.phrase)   
+        let p = new Pet(pet.id, pet.name, pet.owner, pet.animal_type, pet.mood, pet.phrase) 
         p.renderPet();
-        p.displayPet();
+        // p.displayPet();
     })
    
 }
