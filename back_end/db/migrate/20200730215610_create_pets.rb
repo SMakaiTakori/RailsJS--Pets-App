@@ -4,7 +4,7 @@ class CreatePets < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :owner
       t.string :animal_type
-      t.string :mood
+      t.string :mood, default: "neutral"
       t.string :phrase
 
       t.timestamps

@@ -44,6 +44,7 @@ function createForm(){
                 <option value="Dragon">Dragon</option>
                 <option value="Lizard">Lizard</option>
             </select>
+            <input type="hidden" id= "${this.mood}" class="form-control"></input>
             <button type="submit" class="btn btn-primary ">Create Pet!</button>
         </form>
     `
@@ -58,14 +59,17 @@ function petFormSubmission() {
     let name = document.getElementById('name').value;
     let owner = document.getElementById('owner').value;
     let animal_type = document.getElementById('options').value;
-    console.log(name, owner, animal_type)
+    let mood = document.getElementById('mood');
+
+    console.log(name, owner, animal_type,mood)
     
     //bundle these values so I can make a fetch POST request
     
     let pet = {
         name: name,
         owner: owner,
-        animal_type: animal_type
+        animal_type: animal_type,
+        mood: mood
     }
     console.log(pet)
     //fetch Post request to subsist the input data to db
@@ -82,6 +86,7 @@ function petFormSubmission() {
     .then(pet => {
         let p = new Pet(pet.id, pet.name, pet.owner, pet.animal_type, pet.mood, pet.phrase)   
         p.renderPet();
+        p.displayPet();
     })
    
 }
