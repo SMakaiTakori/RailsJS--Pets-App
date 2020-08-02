@@ -31,19 +31,19 @@ class Pet {
         let animal_type = document.getElementById('options').value; 
         
         let dragon = "../front_end/css/images/cutestDragon.png"; 
-        let wolf = "../front_end/css/images/wolf.jpg"
-        let panther = "../front_end/css/images/wolf.jpg"
-        let lizard = "../front_end/css/images/wolf.jpg"
+        let fox = "../front_end/css/images/fox.png"
+        let dog = "../front_end/css/images/dog.jpg"
+        let lizard = "../front_end/css/images/lizard.jpg"
 
         // console.log(animal_type)
         // can be converted to a switch statement
 
             if (animal_type === 'Dragon'){     
                 petImage.src = dragon;
-            } else if (animal_type === 'Wolf'){
-                petImage.src = wolf;
-            } else if (animal_type === 'Panther'){
-                petImage.src = panther;
+            } else if (animal_type === 'Dog'){
+                petImage.src = dog;
+            } else if (animal_type === 'Fox'){
+                petImage.src = fox;
             } else if (animal_type === 'Lizard'){
                 petImage.src = lizard;
             } else {

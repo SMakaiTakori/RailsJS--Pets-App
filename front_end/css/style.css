@@ -57,6 +57,7 @@
   img {
     /* position: relative; */
     /* padding-top: 100px; */
+    display: none;
     width: 400px !important;
     height: 400px !important;
     /* background: transparent; */

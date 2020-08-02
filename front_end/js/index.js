@@ -38,18 +38,16 @@ function createForm(){
             </div>
             <select id="options" class="custom-select" style='width:155px;'>
                 <option selected>Select Pet Type</option>
-                <option value="Wolf">Wolf</option>
-                <option value="Panther">Panther</option>
                 <option value="Dragon">Dragon</option>
+                <option value="Dog">Dog</option>
+                <option value="Fox">Fox</option>
                 <option value="Lizard">Lizard</option>
             </select>          
             <button type="submit" class="btn btn-primary ">Create Pet!</button>
         </form>
     `
     //add event listener to form
-    petForm.addEventListener('submit', petFormSubmission) 
-   
-   
+    petForm.addEventListener('submit', petFormSubmission)  
 }
 
 function petFormSubmission() {
@@ -67,26 +65,25 @@ function petFormSubmission() {
         owner: owner,
         animal_type: animal_type,
     }
-    
+
     //fetch Post request to subsist the input data to db
-
-    fetch(`${BASE_URL}/pets`, {
-        method: "POST",
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-          },
-        body: JSON.stringify(pet)
-    })
-    .then(resp => resp.json())
-    .then(pet => {
-        //don't persist to database if empty string
-        let p = new Pet(pet.id, pet.name, pet.owner, pet.animal_type, pet.mood, pet.phrase)    
-        p.renderPet();
-        p.displayPet();
-    })
+    if (pet.name != "" && pet.owner != "") {
+        fetch(`${BASE_URL}/pets`, {
+            method: "POST",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(pet)
+        })
+        .then(resp => resp.json())
+        .then(pet => {
+            let p = new Pet(pet.id, pet.name, pet.owner, pet.animal_type, pet.mood, pet.phrase)
+                p.renderPet();
+                p.displayPet();              
+        })
+    }    
 }
-
 
 
 //edit  - edit pet info
