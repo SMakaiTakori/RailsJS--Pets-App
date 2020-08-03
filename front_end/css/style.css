@@ -42,11 +42,19 @@
     background-color:purple !important; 
   }
 
+  #pet-info ul {
+    display:inline-block;
+    /* text-decoration: underline; */
+    background-color: yellow;
+    opacity: 0.6;
+    width: 38%;
+  }
+
   #pet-info li{
-    display: inline;
-    font-size:30px;
-    color: purple;
-    padding-right: 20px;
+    display: inline;    
+    font-size:26px;
+    color: purple;   
+    padding-right: 10px;
   }
 
   .create-pet{
@@ -55,16 +63,8 @@
   }
 
   img {
-    /* position: relative; */
-    /* padding-top: 100px; */
     display: none;
-    width: 400px !important;
-    height: 400px !important;
-    /* background: transparent; */
+    width: 350px !important;
+    height: 350px !important;
   }
 
-  /* #pet-image{
-    width: 300px !important;
-    height: 400px !important;
-
-  } */

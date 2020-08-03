@@ -31,26 +31,25 @@ class Pet {
         
         let dragon = "../front_end/css/images/cutestDragon.png"; 
         let fox = "../front_end/css/images/fox.png"
-        let dog = "../front_end/css/images/dog.jpg"
-        let lizard = "../front_end/css/images/lizard.jpg"
+        let dog = "../front_end/css/images/dog.png"
+        let lizard = "../front_end/css/images/lizard.png"
 
-        // console.log(animal_type)
         // can be converted to a switch statement
 
             if (animal_type === 'Dragon'){
-                petImage.style.display = "inline-block";     
-                petImage.src = dragon;
-            } else if (animal_type === 'Dog'){
-                petImage.style.display = "inline-block"; 
-                petImage.src = dog;
-            } else if (animal_type === 'Fox'){
-                petImage.style.display = "inline-block"; 
-                petImage.src = fox;
-            } else if (animal_type === 'Lizard'){
-                petImage.style.display = "inline-block"; 
-                petImage.src = lizard;
-            } else {
-                petImage.src = "";
+                    petImage.style.display = "inline-block";     
+                    petImage.src = dragon;
+                } else if (animal_type === 'Dog'){
+                    petImage.style.display = "inline-block"; 
+                    petImage.src = dog;
+                } else if (animal_type === 'Fox'){
+                    petImage.style.display = "inline-block"; 
+                    petImage.src = fox;
+                } else if (animal_type === 'Lizard'){
+                    petImage.style.display = "inline-block"; 
+                    petImage.src = lizard;
+                } else {
+                    petImage.src = "";
             }
     }  
    
