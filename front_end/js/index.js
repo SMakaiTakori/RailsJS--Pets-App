@@ -82,7 +82,23 @@ function petFormSubmission() {
                 p.renderPet();
                 p.displayPet();              
         })
-    }    
+    }
+    
+    // read - fetch activities index
+
+    function fetchActivities(){
+        fetch(`${BASE_URL}/activities`)
+        .then(resp => resp.json())
+        .then(activities => {        
+            for (const activity of activities){
+                let a = new Activity(activity.name)    
+                
+            }   
+        })
+    }
+
+
+
 }
 
 

@@ -43,8 +43,7 @@
   }
 
   #pet-info ul {
-    display:inline-block;
-    /* text-decoration: underline; */
+    display: inline-block;
     background-color: yellow;
     opacity: 0.6;
     width: 38%;
@@ -52,7 +51,7 @@
 
   #pet-info li{
     display: inline;    
-    font-size:26px;
+    font-size: 26px;
     color: purple;   
     padding-right: 10px;
   }
