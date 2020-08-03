@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
     // fetchPets()
     createForm()
-
-    
+   
+ 
 })
 
     const BASE_URL = "http://localhost:3000"
@@ -80,26 +80,12 @@ function petFormSubmission() {
         .then(pet => {
             let p = new Pet(pet.id, pet.name, pet.owner, pet.animal_type, pet.mood, pet.phrase)
                 p.renderPet();
-                p.displayPet();              
-        })
-    }
-    
-    // read - fetch activities index
-
-    function fetchActivities(){
-        fetch(`${BASE_URL}/activities`)
-        .then(resp => resp.json())
-        .then(activities => {        
-            for (const activity of activities){
-                let a = new Activity(activity.name)    
+                p.displayPet();
                 
-            }   
+            let a = new Activity("Walking", pet.id)  
+                a.displayActivities();  
         })
-    }
-
-
-
+    }    
 }
-
 
 //edit  - edit pet info

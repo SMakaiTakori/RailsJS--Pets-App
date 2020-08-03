@@ -61,6 +61,20 @@
     padding-bottom: 50px;
   }
 
+  /* #activities ul {
+    display: inline-block;
+    background-color: yellow;
+    opacity: 0.6;
+    width: 38%;
+  } */
+
+  #activities li{
+    display: inline;    
+    font-size: 26px;
+    color: purple;   
+    padding-right: 10px;
+  }
+
   img {
     display: none;
     width: 350px !important;

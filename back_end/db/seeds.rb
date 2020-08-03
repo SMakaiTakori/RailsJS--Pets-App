@@ -11,3 +11,4 @@ Pet.create(name: 'Jack', owner: 'Makai', animal_type:'dog', mood: 'neutral')
 Pet.create(name: 'Lizzy', owner: 'Lola', animal_type: 'bearded-dragon', mood: 'neutral')
 Pet.create(name: 'Akela', owner: 'The Wild', animal_type:'wolf', mood: 'neutral')
 
+Activity.create([{name: 'Walking'}, {name: 'Discipline'}, {name: 'Playing'}, {name: 'Feeding'}])
