@@ -9,6 +9,13 @@ class Activity  {
 
      displayActivities(){
 
+        let activitiesDiv = document.getElementById('activities')
+        activitiesDiv.style.backgroundColor = "purple";
+
+        let activitiesHeader = document.getElementById('heading')
+        activitiesHeader.style.display = "inline-block";
+        activitiesHeader.innerHTML = `<h3> Activities:   </h3>`
+
         let walkImage = document.getElementById('walking')
         let walking = "../front_end/css/images/leash.png";
         walkImage.style.display = "inline-block";
@@ -19,25 +26,15 @@ class Activity  {
         timeoutImage.style.display = "inline-block";
         timeoutImage.src = timeout;
 
-        // let walkImage = document.getElementById('walking')
-        // let walking = "../front_end/css/images/leash.png";
-        // walkImage.style.display = "inline-block";
-        // walkImage.src = walking;
-
+        let feedingImage = document.getElementById('feeding')
+        let feeding = "../front_end/css/images/foodBowl.png";
+        feedingImage.style.display = "inline-block";
+        feedingImage.src = feeding;
         
-        // let walkImage = document.getElementById('walking')
-        // let walking = "../front_end/css/images/leash.png";
-        // walkImage.style.display = "inline-block";
-        // walkImage.src = walking;
-
-
-
-
-
-        let f = "../front_end/css/images/foodBowl.jpg";
-        let d = "../front_end/css/images/foodBowl.jpg";
-        let m = "../front_end/css/images/foodBowl.jpg";
-        
+        let medicineImage = document.getElementById('medicine')
+        let medicine = "../front_end/css/images/medicine.png";
+        medicineImage.style.display = "inline-block";
+        medicineImage.src = medicine;
         
     }
 }

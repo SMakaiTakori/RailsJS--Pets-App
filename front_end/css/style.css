@@ -28,7 +28,7 @@
 
   form {
     padding-left: 50px;
-    padding-bottom: 100px;
+    padding-bottom: 50px;
     margin: 0 auto; 
     width: 750px; 
   }
@@ -67,10 +67,22 @@
     height: 350px !important;
   }
 
-  #activities img{
-    padding-top: 10px;
-    width:75px !important;
-    height: 75px !important;
+  div#activities{
+    width: 38%;
+    margin-bottom: 20px;
+    margin: 0 auto;
+  }
 
+  #heading {
+    color: yellow;
+  }
+
+  #activities img{   
+    padding-top: 10px;
+    padding-bottom: 15px;
+    padding-right: 15px;
+    padding-left: 10px;
+    width:75px !important;
+    height: 75px !important;  
   }
 
