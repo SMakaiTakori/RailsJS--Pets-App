@@ -86,6 +86,8 @@ function petFormSubmission() {
                 a.displayActivities();  
         })
     }    
+
 }
+
 
 //edit  - edit pet info
