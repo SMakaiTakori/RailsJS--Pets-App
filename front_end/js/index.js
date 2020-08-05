@@ -98,8 +98,10 @@ function walkingActivity(){
 function activitySubmission(){
     event.preventDefault();
 
-    let petMood = document.getElementsByClassName('mood')
-    console.log(petMood)
+    let petMood = document.getElementById('mood')
+    text = petMood.textContent.split(':')
+    mood = text[1] 
+    console.log(mood)
 
 
     // fetch `${BASE_URL}/pets`, {
