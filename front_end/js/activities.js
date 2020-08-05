@@ -8,12 +8,30 @@ class Activity  {
     }
 
      displayActivities(){
-        let walkImage = document.getElementById('walking')
-        // console.log(walkImage)
-        let walking = "../front_end/css/images/leash.png";
 
+        let walkImage = document.getElementById('walking')
+        let walking = "../front_end/css/images/leash.png";
         walkImage.style.display = "inline-block";
         walkImage.src = walking;
+        
+        let timeoutImage = document.getElementById('discipline')
+        let timeout = "../front_end/css/images/timeout.png";
+        timeoutImage.style.display = "inline-block";
+        timeoutImage.src = timeout;
+
+        // let walkImage = document.getElementById('walking')
+        // let walking = "../front_end/css/images/leash.png";
+        // walkImage.style.display = "inline-block";
+        // walkImage.src = walking;
+
+        
+        // let walkImage = document.getElementById('walking')
+        // let walking = "../front_end/css/images/leash.png";
+        // walkImage.style.display = "inline-block";
+        // walkImage.src = walking;
+
+
+
 
 
         let f = "../front_end/css/images/foodBowl.jpg";
