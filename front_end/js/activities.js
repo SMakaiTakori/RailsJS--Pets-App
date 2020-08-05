@@ -5,11 +5,9 @@ class Activity  {
     }
 
      displayActivities(){
-
         let activitiesDiv = document.getElementById('activities')
         activitiesDiv.style.backgroundColor = "purple";
         activitiesDiv.style.float = "right";
-
 
         let activitiesHeader = document.getElementById('heading')
         activitiesHeader.style.display = "inline-block";
@@ -33,9 +31,17 @@ class Activity  {
         let medicineImage = document.getElementById('medicine')
         let medicine = "../front_end/css/images/medicine.png";
         medicineImage.style.display = "inline-block";
-        medicineImage.src = medicine;
-        
+        medicineImage.src = medicine;        
     }
+
+    // walkPet(){
+        
+    
+
+    // }
+
+
+
 }
 
 

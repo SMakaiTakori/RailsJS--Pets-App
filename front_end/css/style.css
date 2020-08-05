@@ -52,8 +52,7 @@
 
   #pet-info li{
     display: inline;    
-    font-size: 26px;
-    font-weight: bold;
+    font-size: 28px;
     color: purple;       
   }
 
@@ -67,12 +66,12 @@
     width: 350px !important;
     height: 350px !important;
     margin-right: -650px;
-    margin-top: 40px;
+    margin-top: 50px;
   }
 
   div#activities{
     list-style-type: none;
-    margin-right:640px;
+    margin-right:600px;
     margin-top: -30px;
   }
 

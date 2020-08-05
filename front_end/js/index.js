@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     // fetchPets()
     createForm()
+   walkingActivity()
    
  
 })
@@ -85,8 +86,34 @@ function petFormSubmission() {
             let a = new Activity("Walking", pet.id)  
                 a.displayActivities();  
         })
-    }    
+    }
+}
 
+function walkingActivity(){
+    // debugger;
+    let walk = document.getElementById('walking')
+    walk.addEventListener('click', activitySubmission)
+}
+
+function activitySubmission(){
+    event.preventDefault();
+
+    let petMood = document.getElementsByClassName('mood')
+    console.log(petMood)
+
+
+    // fetch `${BASE_URL}/pets`, {
+    //     method: "POST",
+    //     headers: {
+    //         'Accept': 'application/json',
+    //         'Content-Type': 'application/json'
+    //     },
+    //     body: JSON.stringify(pet)
+    // })
+    // .then(resp => resp.json())
+    // .then(pet => {
+        
+    // })
 }
 
 

@@ -19,7 +19,7 @@ class Pet {
         <li><label>Pet Name:</label>${this.name} |</li>
         <li><label>Pet Owner:</label>${this.owner} |</li>
         <li><label>Pet Type:</label>${this.animal_type} |</li> 
-        <li><label>Mood:</label>${this.mood}</li> 
+        <li class = "mood"><label>Mood:</label>${this.mood}</li> 
         </ul> 
          `
     }
