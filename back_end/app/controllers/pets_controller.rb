@@ -26,6 +26,7 @@ class PetsController < ApplicationController
 
   # PATCH/PUT /pets/1
   def update
+  
     if @pet.update(pet_params)
       render json: @pet
     else

@@ -9,6 +9,8 @@ class Activity  {
         activitiesDiv.style.backgroundColor = "purple";
         activitiesDiv.style.float = "right";
 
+        activitiesDiv.setAttribute('data-id', this.pet_id)
+
         let activitiesHeader = document.getElementById('heading')
         activitiesHeader.style.display = "inline-block";
         activitiesHeader.innerHTML = `<h3> Activities:   </h3>`
@@ -17,6 +19,7 @@ class Activity  {
         let walking = "../front_end/css/images/leash.png";
         walkImage.style.display = "inline-block";
         walkImage.src = walking;
+        walkImage.setAttribute('data-mood', "happy")
         
         let timeoutImage = document.getElementById('discipline')
         let timeout = "../front_end/css/images/timeout.png";
@@ -34,11 +37,12 @@ class Activity  {
         medicineImage.src = medicine;        
     }
 
-    // walkPet(){
-        
-    
-
-    // }
+    walkPet(){
+        let petMood = document.getElementById('mood')
+        text = petMood.textContent.split(':')
+        mood = text[1] 
+        mood = "Happy";    
+     }
 
 
 

@@ -11,16 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // read - fetch pets index
 //include some preloaded pets?
 
-// function fetchPets(){
-//     fetch(`${BASE_URL}/pets`)
-//     .then(resp => resp.json())
-//     .then(pets => {        
-//         for (const pet of pets){
-//             let p = new Pet(pet.id, pet.name, pet.owner, pet.animal_type, pet.mood, pet.phrase)    
-//             p.renderPet().last;
-//         }   
-//     })
-// }
+// 
 
 // create a form for user to input pet info for new pet
 
@@ -97,25 +88,28 @@ function walkingActivity(){
 
 function activitySubmission(){
     event.preventDefault();
+   
+    let petId = event.target.parentElement.parentElement.dataset.id
+    console.log(petId)
 
-    let petMood = document.getElementById('mood')
-    text = petMood.textContent.split(':')
-    mood = text[1] 
-    console.log(mood)
+            fetch(`${BASE_URL}/pets/${petId}`, {
+                method: "PATCH",
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({mood: event.target.dataset.mood}
+                    )
+            })
+            .then(resp => resp.json())
+            .then(dog => {
+                console.log(dog)
 
 
-    // fetch `${BASE_URL}/pets`, {
-    //     method: "POST",
-    //     headers: {
-    //         'Accept': 'application/json',
-    //         'Content-Type': 'application/json'
-    //     },
-    //     body: JSON.stringify(pet)
-    // })
-    // .then(resp => resp.json())
-    // .then(pet => {
-        
-    // })
+            }  )          
+            
+
+
 }
 
 
