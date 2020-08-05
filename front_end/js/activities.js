@@ -1,7 +1,4 @@
 class Activity  {
-
-    
-
     constructor(name, pet_id) {
         this.name = name;
         this.pet_id = pet_id;
@@ -11,6 +8,8 @@ class Activity  {
 
         let activitiesDiv = document.getElementById('activities')
         activitiesDiv.style.backgroundColor = "purple";
+        activitiesDiv.style.float = "right";
+
 
         let activitiesHeader = document.getElementById('heading')
         activitiesHeader.style.display = "inline-block";

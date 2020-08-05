@@ -17,7 +17,7 @@
   h1 {
     color: purple;
     font-size: 60px;
-    padding-top: 100px;
+    padding-top: 20px;
   }
 
   h2 { 
@@ -44,16 +44,17 @@
 
   #pet-info ul {
     display: inline-block;
-    background-color: yellow;
+    /* background-color: yellow; */
     opacity: 0.6;
-    width: 38%;
+    width: 40%;
+    padding-bottom: 30px;
   }
 
   #pet-info li{
     display: inline;    
     font-size: 26px;
-    color: purple;   
-    padding-right: 10px;
+    font-weight: bold;
+    color: purple;       
   }
 
   .create-pet{
@@ -61,16 +62,18 @@
     padding-bottom: 50px;
   }
 
-  img {
+  #pet-image {
     display: none;
     width: 350px !important;
     height: 350px !important;
+    margin-right: -650px;
+    margin-top: 40px;
   }
 
   div#activities{
-    width: 38%;
-    margin-bottom: 20px;
-    margin: 0 auto;
+    list-style-type: none;
+    margin-right:640px;
+    margin-top: -30px;
   }
 
   #heading {
@@ -78,11 +81,9 @@
   }
 
   #activities img{   
-    padding-top: 10px;
-    padding-bottom: 15px;
-    padding-right: 15px;
-    padding-left: 10px;
-    width:75px !important;
-    height: 75px !important;  
+    display: none;  
+    width: 80px;
+    height: 80px;  
+    margin-bottom: 15px;
   }
 
