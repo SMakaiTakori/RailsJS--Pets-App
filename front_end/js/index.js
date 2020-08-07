@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
     // fetchPets()
     createForm()
-   walkingActivity()
+    activityEvents()
+    editForm()
    
  
 })
@@ -39,7 +40,8 @@ function createForm(){
         </form>
     `
     //add event listener to form
-    petForm.addEventListener('submit', petFormSubmission)  
+    petForm.addEventListener('submit', petFormSubmission) 
+   
 }
 
 function petFormSubmission() {
@@ -80,7 +82,7 @@ function petFormSubmission() {
     }
 }
 
-function walkingActivity(){
+function activityEvents(){
     // debugger;
     let walk = document.getElementById('walking')
     let timeout = document.getElementById('discipline')
@@ -91,7 +93,6 @@ function walkingActivity(){
     timeout.addEventListener('click', activitySubmission)
     feeding.addEventListener('click', activitySubmission)
     medicine.addEventListener('click', activitySubmission)
-
 }
 
 function activitySubmission(){
@@ -109,13 +110,66 @@ function activitySubmission(){
             )
         })
         .then(resp => resp.json())
-        .then(dog => {
+        .then(pet => {
             //grabs current neutral mood on DOM
             let petMood = document.querySelector('li#mood')   
             //update DOM mood 
-            petMood.innerHTML = `<label>Mood:</label>${dog.mood}`
+            petMood.innerHTML = `<label>Mood:</label>${pet.mood}`
     })        
 }
 
 
+function editForm(){
+    // let editForm = document.getElementById('edit-pet')
+    let editForm = document.getElementById('edit-pet')
+
+    editForm.innerHTML += 
+    `   <form name= "edit-pet" class="form-inline">
+        <div class="form-group">
+        <input type="name" class="form-control" id="editname" placeholder="Edit Pet Name">
+        </div>
+        <div class="form-group">
+        <input type="owner" class="form-control" id="editowner" placeholder="Edit Owner's Name">
+        </div>
+        <button type="submit" class="btn btn-primary id= "edit">Edit Pet!</button>     
+        </form>   
+    `
+    //add event listener to form
+    editForm.addEventListener('submit', editFormSubmission)  
+}
+
+function editFormSubmission(){
+    event.preventDefault();
+    // debugger;
+    let name = document.getElementById('editname').value;
+    let owner = document.getElementById('editowner').value;
+    let petId = document.querySelector('div#activities').dataset.id
+    console.log(petId)
+
+        fetch(`${BASE_URL}/pets/${petId}`, {
+            method: "PATCH",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name,
+                owner
+            })
+        })
+        .then(resp => resp.json())
+        .then(pet => { 
+            console.log(name,owner)
+
+
+        })
+
+
+
+}
+
+
 //edit  - edit pet info
+//create an edit form
+//grab new values for pet name and owner
+//update the pet instance and DOM with new values
