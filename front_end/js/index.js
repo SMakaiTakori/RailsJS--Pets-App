@@ -1,20 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // fetchPets()
     createForm()
     activityEvents()
-    editForm()
-   
  
 })
 
     const BASE_URL = "http://localhost:3000"
-
-// read - fetch pets index
-//include some preloaded pets?
-
-// 
-
-// create a form for user to input pet info for new pet
 
 function createForm(){
     let petForm = document.getElementById('create-pet')
@@ -45,21 +35,17 @@ function createForm(){
 }
 
 function petFormSubmission() {
-    // debugger;
     event.preventDefault();
     //Grab values submitted by user
     let name = document.getElementById('name').value;
     let owner = document.getElementById('owner').value;
-    let animal_type = document.getElementById('options').value;
-    
-    //bundle these values so I can make a fetch POST request
-    
+    let animal_type = document.getElementById('options').value;    
+    //bundle these values so I can make a fetch POST request    
     let pet = {
         name: name,
         owner: owner,
         animal_type: animal_type,
     }
-
     //fetch Post request to subsist the input data to db
     if (pet.name != "" && pet.owner != "") {
         fetch(`${BASE_URL}/pets`, {
@@ -78,6 +64,7 @@ function petFormSubmission() {
                 
             let a = new Activity("Walking", pet.id)  
                 a.displayActivities();  
+                editForm();
         })
     }
 }
@@ -118,7 +105,6 @@ function activitySubmission(){
     })        
 }
 
-
 function editForm(){
     // let editForm = document.getElementById('edit-pet')
     let editForm = document.getElementById('edit-pet')
@@ -144,7 +130,6 @@ function editFormSubmission(){
     let name = document.getElementById('editname').value;
     let owner = document.getElementById('editowner').value;
     let petId = document.querySelector('div#activities').dataset.id
-    console.log(petId)
 
         fetch(`${BASE_URL}/pets/${petId}`, {
             method: "PATCH",
@@ -161,18 +146,8 @@ function editFormSubmission(){
         .then(pet => { 
             let petName = document.querySelector('li#name')   
             let petOwner = document.querySelector('li#owner')
-
             //update DOM 
             petName.innerHTML = `<label>Pet Name:</label>${pet.name} |`
             petOwner.innerHTML = `<label>Pet Owner:</label>${pet.owner} |`
         })
-
-
-
 }
-
-
-//edit  - edit pet info
-//create an edit form
-//grab new values for pet name and owner
-//update the pet instance and DOM with new values
