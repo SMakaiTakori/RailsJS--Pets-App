@@ -16,10 +16,10 @@ class Pet {
         petInfo.innerHTML +=
         `
         <ul>
-        <li id = "name"><label>Pet Name:</label>${this.name} |</li>
-        <li id = "owner"><label>Pet Owner:</label>${this.owner} |</li>
-        <li><label>Pet Type:</label>${this.animal_type} |</li> 
-        <li id = "mood"><label>Mood:</label>${this.mood}</li> 
+        <li id = "name"><label>Pet Name: </label>${this.name} |</li>
+        <li id = "owner"><label>Pet Owner: </label>${this.owner} |</li>
+        <li><label>Pet Type: </label>${this.animal_type} |</li> 
+        <li id = "mood"><label>Mood: </label>${this.mood}</li> 
         </ul> 
          `
     }

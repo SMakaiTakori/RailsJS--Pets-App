@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
  
 })
 
-    const BASE_URL = "http://localhost:3000"
+const BASE_URL = "http://localhost:3000"
 
 function createForm(){
     let petForm = document.getElementById('create-pet')
@@ -61,12 +61,15 @@ function petFormSubmission() {
             let p = new Pet(pet.id, pet.name, pet.owner, pet.animal_type, pet.mood, pet.phrase)
                 p.renderPet();
                 p.displayPet();
+                let petForm = document.querySelector('.form-inline')
+                // console.log(petForm)
+                petForm.reset()
                 
             let a = new Activity("Walking", pet.id)  
-                a.displayActivities();  
+                a.displayActivities();                  
                 editForm();
         })
-    }
+    }   
 }
 
 function activityEvents(){
@@ -101,7 +104,7 @@ function activitySubmission(){
             //grabs current neutral mood on DOM
             let petMood = document.querySelector('li#mood')   
             //update DOM mood 
-            petMood.innerHTML = `<label>Mood:</label>${pet.mood}`
+            petMood.innerHTML = `<label>Mood: </label>${pet.mood}`
     })        
 }
 
@@ -110,7 +113,7 @@ function editForm(){
     let editForm = document.getElementById('edit-pet')
 
     editForm.innerHTML += 
-    `   <form name= "edit-pet" class="form-inline">
+    `   <form name= "edit-pet" id = "editForm" class="form-inline">
         <div class="form-group">
         <input type="name" class="form-control" id="editname" placeholder="Edit Pet Name">
         </div>
@@ -147,7 +150,10 @@ function editFormSubmission(){
             let petName = document.querySelector('li#name')   
             let petOwner = document.querySelector('li#owner')
             //update DOM 
-            petName.innerHTML = `<label>Pet Name:</label>${pet.name} |`
-            petOwner.innerHTML = `<label>Pet Owner:</label>${pet.owner} |`
-        })
+            petName.innerHTML = `<label>Pet Name: </label>${pet.name} |`
+            petOwner.innerHTML = `<label>Pet Owner: </label>${pet.owner} |`
+
+            let petForm = document.getElementById('editForm')
+            petForm.reset()            
+        })        
 }

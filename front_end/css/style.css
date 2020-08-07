@@ -30,7 +30,7 @@
     padding-left: 50px;
     padding-bottom: 50px;
     margin: 0 auto; 
-    width: 800px; 
+    width: 750px; 
   }
   
   .form-group, select{
@@ -46,7 +46,7 @@
     display: inline-block;
     /* background-color: yellow; */
     opacity: 0.6;
-    width: 40%;
+    width: 45%;
     padding-bottom: 30px;
   }
 
