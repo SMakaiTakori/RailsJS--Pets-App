@@ -159,9 +159,12 @@ function editFormSubmission(){
         })
         .then(resp => resp.json())
         .then(pet => { 
-            console.log(name,owner)
+            let petName = document.querySelector('li#name')   
+            let petOwner = document.querySelector('li#owner')
 
-
+            //update DOM 
+            petName.innerHTML = `<label>Pet Name:</label>${pet.name} |`
+            petOwner.innerHTML = `<label>Pet Owner:</label>${pet.owner} |`
         })
 
 
