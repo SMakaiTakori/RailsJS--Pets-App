@@ -8,7 +8,6 @@ class Activity  {
         let activitiesDiv = document.getElementById('activities')
         activitiesDiv.style.backgroundColor = "purple";
         activitiesDiv.style.float = "right";
-
         activitiesDiv.setAttribute('data-id', this.pet_id)
 
         let activitiesHeader = document.getElementById('heading')
@@ -37,12 +36,12 @@ class Activity  {
         medicineImage.src = medicine;        
     }
 
-    walkPet(){
-        let petMood = document.getElementById('mood')
-        text = petMood.textContent.split(':')
-        mood = text[1] 
-        mood = "Happy";    
-     }
+    // walkPet(){
+    //     
+    //     text = petMood.textContent.split(':')
+    //     mood = text[1] 
+    //     mood = "Happy";    
+    //  }
 
 
 

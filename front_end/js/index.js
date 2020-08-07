@@ -84,32 +84,35 @@ function walkingActivity(){
     // debugger;
     let walk = document.getElementById('walking')
     walk.addEventListener('click', activitySubmission)
+
 }
 
 function activitySubmission(){
     event.preventDefault();
    
     let petId = event.target.parentElement.parentElement.dataset.id
-    console.log(petId)
 
-            fetch(`${BASE_URL}/pets/${petId}`, {
-                method: "PATCH",
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({mood: event.target.dataset.mood}
-                    )
-            })
-            .then(resp => resp.json())
-            .then(dog => {
-                console.log(dog)
+        fetch(`${BASE_URL}/pets/${petId}`, {
+            method: "PATCH",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({mood: event.target.dataset.mood}
+            )
+        })
+        .then(resp => resp.json())
+        .then(dog => {
+          
+            let petMood = document.querySelector('li#mood')
+              //grabs current neutral mood on DOM
+            // p = petMood.innerHTML.split('</label>')[1]        
 
+            //want to update DOM mood 
+            petMood.innerHTML = `<label>Mood:</label>${dog.mood}` 
+            // console.log(p)
 
-            }  )          
-            
-
-
+    })        
 }
 
 
