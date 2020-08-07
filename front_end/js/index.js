@@ -83,7 +83,14 @@ function petFormSubmission() {
 function walkingActivity(){
     // debugger;
     let walk = document.getElementById('walking')
+    let timeout = document.getElementById('discipline')
+    let feeding = document.getElementById('feeding')
+    let medicine = document.getElementById('medicine')
+
     walk.addEventListener('click', activitySubmission)
+    timeout.addEventListener('click', activitySubmission)
+    feeding.addEventListener('click', activitySubmission)
+    medicine.addEventListener('click', activitySubmission)
 
 }
 
@@ -103,15 +110,10 @@ function activitySubmission(){
         })
         .then(resp => resp.json())
         .then(dog => {
-          
-            let petMood = document.querySelector('li#mood')
-              //grabs current neutral mood on DOM
-            // p = petMood.innerHTML.split('</label>')[1]        
-
-            //want to update DOM mood 
-            petMood.innerHTML = `<label>Mood:</label>${dog.mood}` 
-            // console.log(p)
-
+            //grabs current neutral mood on DOM
+            let petMood = document.querySelector('li#mood')   
+            //update DOM mood 
+            petMood.innerHTML = `<label>Mood:</label>${dog.mood}`
     })        
 }
 

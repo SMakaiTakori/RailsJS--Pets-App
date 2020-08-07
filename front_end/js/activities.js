@@ -24,25 +24,20 @@ class Activity  {
         let timeout = "../front_end/css/images/timeout.png";
         timeoutImage.style.display = "inline-block";
         timeoutImage.src = timeout;
+        timeoutImage.setAttribute('data-mood', "ashamed")
 
         let feedingImage = document.getElementById('feeding')
         let feeding = "../front_end/css/images/foodBowl.png";
         feedingImage.style.display = "inline-block";
         feedingImage.src = feeding;
+        feedingImage.setAttribute('data-mood', "ecstatic")
         
         let medicineImage = document.getElementById('medicine')
         let medicine = "../front_end/css/images/medicine.png";
         medicineImage.style.display = "inline-block";
         medicineImage.src = medicine;        
+        medicineImage.setAttribute('data-mood', "grossed out")
     }
-
-    // walkPet(){
-    //     
-    //     text = petMood.textContent.split(':')
-    //     mood = text[1] 
-    //     mood = "Happy";    
-    //  }
-
 
 
 }
