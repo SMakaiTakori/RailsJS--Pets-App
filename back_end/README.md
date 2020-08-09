@@ -1,24 +1,25 @@
-# README
+## Welcome to the the Doggy Airbnb App!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is my Pseudo Tamagotchi App made with Rails and Javascript that allows users to create a pet and perform activities with it to change it's current mood. In order to use this app, clone it, run "bundle install" to install the dependencies, and run the rails server in your terminal before opening the index.html file in your browser. 
 
-Things you may want to cover:
+## Usage
 
-* Ruby version
+Create your pet by entering your pet's name and owner name in the form and then selecting the type of pet from the dropdown list of pet types. 
 
-* System dependencies
+You will then see your pet appear on the page along with a pet stats bar and a set of activities to interact with your pet. 
 
-* Configuration
+From here you can select any of the activities and see what affect they each have on your pet's mood. 
 
-* Database creation
+Additionally, you can edit your pet's name and owner. 
 
-* Database initialization
+The user can also choose to create an entirely new pet at any time. 
 
-* How to run the test suite
+Have Fun!
 
-* Services (job queues, cache servers, search engines, etc.)
+## Contributing
+Bug reports and pull requests are welcome on GitHub at https://github.com/SMakaiTakori/RailsJS--Pets-App.
 
-* Deployment instructions
+## License
+The gems used in this app are available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 
-* ...
+Copyright (c) 2020 S. Makai Takori
