@@ -1,6 +1,8 @@
 ## Welcome to the the Doggy Airbnb App!
 
-This is my Pseudo Tamagotchi App made with Rails and Javascript that allows users to create a pet and perform activities with it to change it's current mood. In order to use this app, clone it, run "bundle install" to install the dependencies, and run the rails server in your terminal before opening the index.html file in your browser. 
+This is my Pseudo Tamagotchi App made with Rails and Javascript that allows users to create a pet and perform activities with it to change it's current mood. 
+
+In order to use this app, clone it, run "bundle install" to install the dependencies, and run the rails server in your terminal before opening the index.html file in your browser. 
 
 ## Usage
 
