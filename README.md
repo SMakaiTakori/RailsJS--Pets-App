@@ -1,4 +1,4 @@
-## Welcome to the the Doggy Airbnb App!
+## Welcome to the the Pseudo Tamagotchi App!
 
 This is my Pseudo Tamagotchi App made with Rails and Javascript that allows users to create a pet and perform activities with it to change it's current mood. 
 
