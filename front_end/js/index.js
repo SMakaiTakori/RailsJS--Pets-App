@@ -1,15 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
-    createForm()
-    activityEvents() 
-})
+  createForm();
+  activityEvents();
+});
 
-const BASE_URL = "http://localhost:3000"
+const BASE_URL = "http://localhost:3000";
 
-function createForm(){
-    let petForm = document.getElementById('create-pet');
-    // console.log(petForm)
-    petForm.innerHTML = 
-    `
+function createForm() {
+  let petForm = document.getElementById("create-pet");
+  // console.log(petForm)
+  petForm.innerHTML = `
     <h2>Get Started by creating your pet below!</h2>
         <form name= "create-pet" class="form-inline">
             <div class="form-group">
@@ -27,96 +26,98 @@ function createForm(){
             </select>          
             <button type="submit" class="btn btn-primary ">Create Pet!</button>
         </form>
-    `
-    //add event listener to form
-    petForm.addEventListener('submit', petFormSubmission) 
-   
+    `;
+  //add event listener to form
+  petForm.addEventListener("submit", petFormSubmission);
 }
 
-function petFormSubmission() {
-    event.preventDefault();
+function petFormSubmission(e) {
+  e.preventDefault();
 
-    //Grab values submitted by user
-    let name = document.getElementById('name').value;
-    let owner = document.getElementById('owner').value;
-    let animal_type = document.getElementById('options').value;   
+  //Grab values submitted by user
+  let name = document.getElementById("name").value;
+  let owner = document.getElementById("owner").value;
+  let animal_type = document.getElementById("options").value;
 
-    //bundle these values so I can make a fetch POST request    
-    let pet = {
-        name,
-        owner,
-        animal_type,
-    }
+  //bundle these values so I can make a fetch POST request
+  let pet = {
+    name,
+    owner,
+    animal_type,
+  };
 
-    //fetch Post request to subsist the input data to db
-    if (pet.name != "" && pet.owner != "") {
-        fetch(`${BASE_URL}/pets`, {
-            method: "POST",
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(pet)
-        })
-        .then(res => res.json())
-        .then(pet => {
-            let newPet = new Pet(pet.id, pet.name, pet.owner, pet.animal_type, pet.mood, pet.phrase);
-                newPet.renderPet();
-                newPet.displayPet();
+  //fetch Post request to subsist the input data to db
+  if (pet.name != "" && pet.owner != "") {
+    fetch(`${BASE_URL}/pets`, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(pet),
+    })
+      .then((res) => res.json())
+      .then((pet) => {
+        let newPet = new Pet(
+          pet.id,
+          pet.name,
+          pet.owner,
+          pet.animal_type,
+          pet.mood,
+          pet.phrase
+        );
+        newPet.renderPet();
+        newPet.displayPet();
 
-                let petForm = document.querySelector('.form-inline');
-                petForm.reset();
-                
-            let newActivity = new Activity("Walking", pet.id);  
-                newActivity.displayActivities();                  
-                editForm();
-        })
-    }   
+        let petForm = document.querySelector(".form-inline");
+        petForm.reset();
+
+        let newActivity = new Activity("Walking", pet.id);
+        newActivity.displayActivities();
+        editForm();
+      });
+  }
 }
 
-function activityEvents(){
-  
-    let walk = document.getElementById('walking');
-    let timeout = document.getElementById('discipline');
-    let feeding = document.getElementById('feeding');
-    let medicine = document.getElementById('medicine');
+function activityEvents() {
+  let walk = document.getElementById("walking");
+  let timeout = document.getElementById("discipline");
+  let feeding = document.getElementById("feeding");
+  let medicine = document.getElementById("medicine");
 
-    walk.addEventListener('click', activitySubmission)
-    timeout.addEventListener('click', activitySubmission)
-    feeding.addEventListener('click', activitySubmission)
-    medicine.addEventListener('click', activitySubmission)
+  walk.addEventListener("click", activitySubmission);
+  timeout.addEventListener("click", activitySubmission);
+  feeding.addEventListener("click", activitySubmission);
+  medicine.addEventListener("click", activitySubmission);
 }
 
-function activitySubmission(){
-    event.preventDefault();
-   
-    let petId = event.target.parentElement.parentElement.dataset.id;
+function activitySubmission(e) {
+  e.preventDefault();
 
-        fetch(`${BASE_URL}/pets/${petId}`, {
-            method: "PATCH",
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({mood: event.target.dataset.mood}
-            )
-        })
-        .then(res => res.json())
-        .then(pet => {
-            //grabs current neutral mood on DOM
-            let petMood = document.querySelector('li#mood');  
+  let petId = e.target.parentElement.parentElement.dataset.id;
 
-            //update DOM mood 
-            petMood.innerHTML = `<label>Mood: </label>${pet.mood}`
-    })        
+  fetch(`${BASE_URL}/pets/${petId}`, {
+    method: "PATCH",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ mood: e.target.dataset.mood }),
+  })
+    .then((res) => res.json())
+    .then((pet) => {
+      //grabs current neutral mood on DOM
+      let petMood = document.querySelector("li#mood");
+
+      //update DOM mood
+      petMood.innerHTML = `<label>Mood: </label>${pet.mood}`;
+    });
 }
 
-function editForm(){
-  
-    let editForm = document.getElementById('edit-pet');
+function editForm() {
+  let editForm = document.getElementById("edit-pet");
 
-    editForm.innerHTML = 
-    `   <form name= "edit-pet" id = "editForm" class="form-inline">
+  editForm.innerHTML = `   <form name= "edit-pet" id = "editForm" class="form-inline">
         <div class="form-group">
         <input type="name" class="form-control" id="editname" placeholder="Edit Pet Name">
         </div>
@@ -125,41 +126,41 @@ function editForm(){
         </div>
         <button type="submit" class="btn btn-primary id= "edit">Edit Pet!</button>     
         </form>   
-    `
-    //add event listener to form
-    editForm.addEventListener('submit', editFormSubmission)  
+    `;
+  //add event listener to form
+  editForm.addEventListener("submit", editFormSubmission);
 }
 
-function editFormSubmission(){
-    event.preventDefault();
-   
-    let name = document.getElementById('editname').value;
-    let owner = document.getElementById('editowner').value;
-    let petId = document.querySelector('div#activities').dataset.id
+function editFormSubmission() {
+  event.preventDefault();
 
-        fetch(`${BASE_URL}/pets/${petId}`, {
-            method: "PATCH",
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                name,
-                owner
-            })
-        })
-        .then(res => res.json())
-        .then(pet => { 
-            let petName = document.querySelector('li#name')   
-            let petOwner = document.querySelector('li#owner')
+  let name = document.getElementById("editname").value;
+  let owner = document.getElementById("editowner").value;
+  let petId = document.querySelector("div#activities").dataset.id;
 
-            //update DOM 
-            if (pet.name != "" && pet.owner != "") {
-                petName.innerHTML = `<label>Pet Name: </label>${pet.name} |`
-                petOwner.innerHTML = `<label>Pet Owner: </label>${pet.owner} |`
-            }
+  fetch(`${BASE_URL}/pets/${petId}`, {
+    method: "PATCH",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      name,
+      owner,
+    }),
+  })
+    .then((res) => res.json())
+    .then((pet) => {
+      let petName = document.querySelector("li#name");
+      let petOwner = document.querySelector("li#owner");
 
-            let petForm = document.getElementById('editForm')
-            petForm.reset();            
-        });        
+      //update DOM
+      if (pet.name != "" && pet.owner != "") {
+        petName.innerHTML = `<label>Pet Name: </label>${pet.name} |`;
+        petOwner.innerHTML = `<label>Pet Owner: </label>${pet.owner} |`;
+      }
+
+      let petForm = document.getElementById("editForm");
+      petForm.reset();
+    });
 }

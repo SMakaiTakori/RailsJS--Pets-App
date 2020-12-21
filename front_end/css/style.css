@@ -1,91 +1,89 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    text-align: center;
-    background-image: url("images/greenfield.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 950px;
-    background-position: center;
-    font-family: 'VT323', monospace !important;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  h1 {
-    color: purple;
-    font-size: 60px;
-    padding-top: 20px;
-  }
+body {
+  text-align: center;
+  background-image: url("images/greenfield.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 1000px;
+  background-position: center;
+  font-family: "VT323", monospace !important;
+}
 
-  h2 { 
-    color: yellow;
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
+h1 {
+  color: purple;
+  font-size: 60px;
+  padding-top: 20px;
+}
 
-  form {
-    padding-left: 50px;
-    padding-bottom: 50px;
-    margin: 0 auto; 
-    width: 750px; 
-  }
-  
-  .form-group, select{
-    margin-right: 10px;
-  }
+h2 {
+  color: yellow;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
 
-  button {
-    color:yellow !important;
-    background-color:purple !important; 
-  }
+form {
+  padding-left: 50px;
+  padding-bottom: 50px;
+  margin: 0 auto;
+  width: 750px;
+}
 
-  #pet-info ul {
-    display: inline-block;
-    /* background-color: yellow; */
-    opacity: 0.6;
-    width: 45%;
-    padding-bottom: 30px;
-  }
+.form-group,
+select {
+  margin-right: 10px;
+}
 
-  #pet-info li{
-    display: inline;    
-    font-size: 28px;
-    color: purple;       
-  }
+button {
+  color: yellow !important;
+  background-color: purple !important;
+}
 
-  .create-pet{
-    padding-top: 100px;
-    padding-bottom: 50px;
-  }
+#pet-info ul {
+  display: inline-block;
+  /* background-color: yellow; */
+  opacity: 0.6;
+  width: 45%;
+  padding-bottom: 30px;
+}
 
-  #pet-image {
-    display: none;
-    width: 350px !important;
-    height: 350px !important;
-    margin-right: -650px;
-    margin-top: 50px;
-  }
+#pet-info li {
+  display: inline;
+  font-size: 28px;
+  color: purple;
+}
 
-  div#activities{
-    list-style-type: none;
-    margin-right:600px;
-    margin-top: -30px;
-  }
+.create-pet {
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
 
-  #heading {
-    color: yellow;
-  }
+#pet-image {
+  display: none;
+  width: 350px !important;
+  height: 350px !important;
+  margin-right: -650px;
+  margin-top: 50px;
+}
 
-  #activities img{   
-    display: none;  
-    width: 80px;
-    height: 80px;  
-    margin-bottom: 15px;
-    cursor: pointer;
-  }
+div#activities {
+  list-style-type: none;
+  margin-right: 600px;
+  margin-top: -30px;
+}
 
+#heading {
+  color: yellow;
+}
 
-
+#activities img {
+  display: none;
+  width: 80px;
+  height: 80px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
